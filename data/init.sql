@@ -1,4 +1,9 @@
+/**
+ * Database creation script
+ */
+
 DROP TABLE IF EXISTS post;
+
 CREATE TABLE post (
                       id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
                       title VARCHAR NOT NULL,
@@ -7,6 +12,7 @@ CREATE TABLE post (
                       created_at VARCHAR NOT NULL,
                       updated_at VARCHAR
 );
+
 INSERT INTO
     post
 (
@@ -15,11 +21,13 @@ INSERT INTO
 VALUES(
           "Here's our first post",
           "This is the body of the first post.
+
   It is split into paragraphs.",
           1,
           date('now', '-2 months')
       )
 ;
+
 INSERT INTO
     post
 (
@@ -33,6 +41,7 @@ VALUES(
           date('now', '-40 days')
       )
 ;
+
 INSERT INTO
     post
 (
@@ -48,6 +57,7 @@ VALUES(
 ;
 
 DROP TABLE IF EXISTS comment;
+
 CREATE TABLE comment (
                          id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
                          post_id INTEGER NOT NULL,
@@ -56,6 +66,7 @@ CREATE TABLE comment (
                          website VARCHAR,
                          text VARCHAR NOT NULL
 );
+
 INSERT INTO
     comment
 (
@@ -69,6 +80,7 @@ VALUES(
           "This is Jimmy's contribution"
       )
 ;
+
 INSERT INTO
     comment
 (
